@@ -20,6 +20,6 @@
 	});
 </script>
 
-<Navbar />
+<Navbar session={data.session} />
 
 <slot />
