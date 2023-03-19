@@ -1,8 +1,12 @@
+<script lang="ts">
+	import type { Session } from '@supabase/supabase-js';
 
+	export let session: Session | null;
+</script>
 
 <div class="navbar bg-base-100">
 	<div class="navbar-start">
-		<a href="/" class="btn btn-ghost normal-case text-xl">Svelte Boilerplate</a>
+		<span class="text-xl">Svelte Boilerplate</span>
 	</div>
 	<div class="navbar-center hidden lg:flex">
 		<ul class="menu menu-horizontal px-1">
@@ -21,7 +25,13 @@
 				tabindex="0"
 				class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 			>
-
+				{#if !session}
+					<li><a>Signup</a></li>
+					<li><a>Login</a></li>
+				{:else}
+					<li><a href="/user-profile">Profile</a></li>
+					<li><a>Logout</a></li>
+				{/if}
 			</ul>
 		</div>
 	</div>
