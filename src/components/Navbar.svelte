@@ -26,7 +26,7 @@
 				class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 			>
 				{#if !session}
-					<li><a>Login</a></li>
+					<li><a href="/login">Login</a></li>
 				{:else}
 					<li><a href="/user-profile">Profile</a></li>
 					<li><a>Logout</a></li>
