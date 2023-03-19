@@ -1,6 +1,4 @@
-<script>
-	export let isLoggedIn = false;
-</script>
+
 
 <div class="navbar bg-base-100">
 	<div class="navbar-start">
@@ -23,13 +21,7 @@
 				tabindex="0"
 				class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 			>
-				{#if !isLoggedIn}
-					<li><a>Signup</a></li>
-					<li><a>Login</a></li>
-				{:else}
-					<li><a href="/user-profile">Profile</a></li>
-					<li><a>Logout</a></li>
-				{/if}
+
 			</ul>
 		</div>
 	</div>
