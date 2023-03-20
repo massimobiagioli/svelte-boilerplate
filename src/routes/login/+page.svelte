@@ -4,25 +4,28 @@
 
 	export let data: PageData;
 
+	let messageSent = false;
+	let showError = false;
+
 	async function handleSubmit(e: SubmitEvent) {
 		const formData = new FormData(e.target as HTMLFormElement);
 		const auth = createAuth(data.supabase);
 		const { error } = await auth.signInWithEmail(formData.get('email') as string, '/');
 		if (error) {
+			showError = true;
 			console.log(error);
+			return;
 		}
+		messageSent = true;
 	}
 </script>
 
-<div class="w-full max-w-xs">
+<div class="w-full">
 	<form on:submit|preventDefault={handleSubmit} class="px-8 pt-6 pb-8 mb-4">
 		<div class="form-control">
-			<label class="label">
-				<span class="label-text">Email</span>
-			</label>
 			<label class="input-group">
 				<span>Email</span>
-				<input type="text" name="email" placeholder="info@site.com" class="input input-bordered" />
+				<input type="text" name="email" placeholder="info@site.com" class="input input-bordered lg:w-2/3 sm:w-full" />
 			</label>
 		</div>
 		<div class="flex items-center justify-between mt-4">
@@ -31,4 +34,20 @@
 			</div>
 		</div>
 	</form>
+
+	{#if messageSent}
+		<div class="alert alert-success">
+			<div>
+				<span>An email was sent with a magic link. Please check your mailbox.</span>
+			</div>
+		</div>
+	{/if}
+
+	{#if showError}
+		<div class="alert alert-error">
+			<div>
+				<span>Unable to login for the email provided.</span>
+			</div>
+		</div>
+	{/if}
 </div>
