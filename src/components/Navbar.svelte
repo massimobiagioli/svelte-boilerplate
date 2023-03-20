@@ -15,6 +15,9 @@
 		</ul>
 	</div>
 	<div class="navbar-end">
+		{#if session}
+			<small class="mr-2">{session.user.email}</small>
+		{/if}
 		<div class="dropdown dropdown-end">
 			<label tabindex="0" class="btn btn-ghost btn-circle avatar">
 				<div class="w-10 rounded-full">
@@ -28,8 +31,7 @@
 				{#if !session}
 					<li><a href="/login">Login</a></li>
 				{:else}
-					<li><a href="/user-profile">Profile</a></li>
-					<li><a>Logout</a></li>
+					<li><a href="/logout">Logout</a></li>
 				{/if}
 			</ul>
 		</div>

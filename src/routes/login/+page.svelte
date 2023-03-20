@@ -25,7 +25,12 @@
 		<div class="form-control">
 			<label class="input-group">
 				<span>Email</span>
-				<input type="text" name="email" placeholder="info@site.com" class="input input-bordered lg:w-2/3 sm:w-full" />
+				<input
+					type="text"
+					name="email"
+					placeholder="info@site.com"
+					class="input input-bordered lg:w-2/3 sm:w-full"
+				/>
 			</label>
 		</div>
 		<div class="flex items-center justify-between mt-4">
@@ -36,18 +41,22 @@
 	</form>
 
 	{#if messageSent}
+	<div class="toast">	
 		<div class="alert alert-success">
 			<div>
 				<span>An email was sent with a magic link. Please check your mailbox.</span>
 			</div>
 		</div>
+	</div>
 	{/if}
 
 	{#if showError}
-		<div class="alert alert-error">
+	<div class="toast">	
+		<div class="m-4 alert alert-error">
 			<div>
 				<span>Unable to login for the email provided.</span>
 			</div>
 		</div>
+	</div>
 	{/if}
 </div>
