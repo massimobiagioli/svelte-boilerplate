@@ -9,7 +9,7 @@ export const load: PageLoad = async ({ parent }) => {
 	}
 
 	const getUserDevices = GetUserDevices(supabase);
-	const devices = await getUserDevices(session.user.id);
+	const devices = await getUserDevices({ owner: session.user.id });
 
 	return {
 		devices

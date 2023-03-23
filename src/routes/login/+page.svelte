@@ -1,4 +1,7 @@
 <script lang="ts">
+	import AlertError from '$components/alert/AlertError.svelte';
+	import AlertSuccess from '$components/alert/AlertSuccess.svelte';
+	import LoginForm from '$components/login/LoginForm.svelte';
 	import createAuth from '$lib/shared/supabase/auth';
 	import type { PageData } from '../$types';
 
@@ -21,42 +24,13 @@
 </script>
 
 <div class="w-full">
-	<form on:submit|preventDefault={handleSubmit} class="px-8 pt-6 pb-8 mb-4">
-		<div class="form-control">
-			<label class="input-group">
-				<span>Email</span>
-				<input
-					type="text"
-					name="email"
-					placeholder="info@site.com"
-					class="input input-bordered lg:w-2/3 sm:w-full"
-				/>
-			</label>
-		</div>
-		<div class="flex items-center justify-between mt-4">
-			<div class="button-group">
-				<button type="submit" class="btn btn-primary">Login</button>
-			</div>
-		</div>
-	</form>
+	<LoginForm onSubmit={handleSubmit} />
 
 	{#if messageSent}
-		<div class="toast">
-			<div class="alert alert-success">
-				<div>
-					<span>An email was sent with a magic link. Please check your mailbox.</span>
-				</div>
-			</div>
-		</div>
+		<AlertSuccess message="An email was sent with a magic link. Please check your mailbox." />
 	{/if}
 
 	{#if showError}
-		<div class="toast">
-			<div class="m-4 alert alert-error">
-				<div>
-					<span>Unable to login for the email provided.</span>
-				</div>
-			</div>
-		</div>
+		<AlertError message="Unable to login for the email provided." />
 	{/if}
 </div>
