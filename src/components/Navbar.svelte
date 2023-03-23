@@ -6,7 +6,7 @@
 
 <div class="navbar bg-base-100">
 	<div class="navbar-start">
-		<span class="text-xl">Svelte Boilerplate</span>
+		<a href="/" class="btn btn-ghost normal-case text-xl">Svelte Boilerplate</a>
 	</div>
 	<div class="navbar-center hidden lg:flex">
 		<ul class="menu menu-horizontal px-1">

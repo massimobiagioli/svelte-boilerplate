@@ -1,9 +1,9 @@
 <script lang="ts">
 	import '../app.css';
-	import Navbar from '../components/Navbar.svelte';
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import type { LayoutData } from './$types';
+	import Navbar from '$components/Navbar.svelte';
 
 	export let data: LayoutData;
 

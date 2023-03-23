@@ -1,5 +1,5 @@
 import type { LayoutLoad } from './$types';
-import createClient from '$lib/supabase/client';
+import createClient from '$lib/shared/supabase/client';
 
 export const load: LayoutLoad = async ({ fetch, data, depends }) => {
 	depends('supabase:auth');

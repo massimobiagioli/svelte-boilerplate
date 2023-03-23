@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import createAuth from '$lib/supabase/auth';
+	import createAuth from '$lib/shared/supabase/authse/auth';
 	import type { PageData } from '../$types';
 
 	export let data: PageData;
@@ -26,12 +26,12 @@
 	</div>
 
 	{#if showError}
-	<div class="toast">
-		<div class="alert alert-error">
-			<div>
-				<span>Unable to login for the email provided.</span>
+		<div class="toast">
+			<div class="alert alert-error">
+				<div>
+					<span>Unable to login for the email provided.</span>
+				</div>
 			</div>
 		</div>
-	</div>
 	{/if}
 </div>

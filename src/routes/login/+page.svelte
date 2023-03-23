@@ -1,5 +1,5 @@
 <script lang="ts">
-	import createAuth from '$lib/supabase/auth';
+	import createAuth from '$lib/shared/supabase/auth';
 	import type { PageData } from '../$types';
 
 	export let data: PageData;
@@ -41,22 +41,22 @@
 	</form>
 
 	{#if messageSent}
-	<div class="toast">	
-		<div class="alert alert-success">
-			<div>
-				<span>An email was sent with a magic link. Please check your mailbox.</span>
+		<div class="toast">
+			<div class="alert alert-success">
+				<div>
+					<span>An email was sent with a magic link. Please check your mailbox.</span>
+				</div>
 			</div>
 		</div>
-	</div>
 	{/if}
 
 	{#if showError}
-	<div class="toast">	
-		<div class="m-4 alert alert-error">
-			<div>
-				<span>Unable to login for the email provided.</span>
+		<div class="toast">
+			<div class="m-4 alert alert-error">
+				<div>
+					<span>Unable to login for the email provided.</span>
+				</div>
 			</div>
 		</div>
-	</div>
 	{/if}
 </div>
