@@ -13,7 +13,7 @@
 	async function handleSubmit(e: SubmitEvent) {
 		const formData = new FormData(e.target as HTMLFormElement);
 		const auth = createAuth(data.supabase);
-		const { error } = await auth.signInWithEmail(formData.get('email') as string, '/');
+		const { error } = await auth.signInWithEmail(formData.get('email') as string);
 		if (error) {
 			showError = true;
 			console.log(error);

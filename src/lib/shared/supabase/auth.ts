@@ -3,11 +3,11 @@ import type { Database } from './database.types';
 
 export default function createAuth(supabase: SupabaseClient<Database>) {
 	return {
-		async signInWithEmail(email: string, emailRedirectTo: string): Promise<AuthResponse> {
+		async signInWithEmail(email: string): Promise<AuthResponse> {
 			return supabase.auth.signInWithOtp({
 				email,
 				options: {
-					emailRedirectTo
+					emailRedirectTo: window.location.origin
 				}
 			});
 		},
