@@ -1,3 +1,5 @@
+import type { DeviceRaw } from './device';
+
 type DeviceRead = {
 	id: number;
 	address: string;
@@ -8,8 +10,8 @@ type DeviceRead = {
 	created_at: string | null;
 };
 
-export function deviceReadfromRaw(raw: any): DeviceRead {
-	const createdAtAsDate = new Date(raw.created_at);
+export function deviceReadfromRaw(raw: DeviceRaw): DeviceRead {
+	const createdAtAsDate = new Date(raw.created_at ?? '');
 
 	return {
 		id: raw.id,

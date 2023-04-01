@@ -2,9 +2,8 @@
 
 ## Pre-requisites
 
-* NodeJs
-* A Supabase Account
-
+- NodeJs
+- A Supabase Account
 
 ## Start local server
 
@@ -24,4 +23,3 @@ To create a production version of your app:
 ```bash
 npm run build
 ```
-

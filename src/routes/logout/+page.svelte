@@ -9,7 +9,7 @@
 
 	let showError = false;
 
-	async function handleLogout(e: MouseEvent) {
+	async function handleLogout() {
 		const auth = createAuth(data.supabase);
 		const { error } = await auth.signOut();
 		if (error) {

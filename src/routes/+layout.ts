@@ -1,7 +1,7 @@
 import type { LayoutLoad } from './$types';
 import createClient from '$lib/shared/supabase/client';
 
-export const load: LayoutLoad = async ({ fetch, data, depends }) => {
+export const load: LayoutLoad = async ({ data, depends }) => {
 	depends('supabase:auth');
 
 	const supabase = createClient(data.session);

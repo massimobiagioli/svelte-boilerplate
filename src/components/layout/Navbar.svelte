@@ -19,13 +19,13 @@
 			<small class="mr-2">{session.user.email}</small>
 		{/if}
 		<div class="dropdown dropdown-end">
-			<label tabindex="0" class="btn btn-ghost btn-circle avatar">
+			<span tabindex="-1" class="btn btn-ghost btn-circle avatar">
 				<div class="w-10 rounded-full">
-					<img src="/avatar.png" />
+					<img src="/avatar.png" alt="avatar" />
 				</div>
-			</label>
+			</span>
 			<ul
-				tabindex="0"
+				tabindex="-1"
 				class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 			>
 				{#if !session}
