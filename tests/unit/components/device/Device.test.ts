@@ -6,7 +6,7 @@ import DeviceRawProvider from '../../../helper/deviceRawProvider';
 
 describe('Device.svelte', () => {
 	it('should render', () => {
-		const device = deviceReadfromRaw(DeviceRawProvider.aDevice);
+		const device = deviceReadfromRaw(DeviceRawProvider.get());
 		const { getByText } = render(Device, { props: { device } });
 		expect(getByText('device name')).toBeTruthy();
 		expect(getByText('device description')).toBeTruthy();

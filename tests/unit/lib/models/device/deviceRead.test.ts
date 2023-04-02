@@ -4,7 +4,7 @@ import DeviceRawProvider from '../../../../helper/deviceRawProvider';
 
 describe('deviceRead', () => {
 	it('create from raw', () => {
-		const deviceRead = deviceReadfromRaw(DeviceRawProvider.aDevice);
+		const deviceRead = deviceReadfromRaw(DeviceRawProvider.get());
 
 		expect(deviceRead.id).toEqual(1);
 		expect(deviceRead.address).toEqual('10.10.10.1');

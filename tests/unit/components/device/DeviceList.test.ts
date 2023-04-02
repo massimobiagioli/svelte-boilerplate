@@ -11,7 +11,7 @@ describe('DeviceList.svelte', () => {
 	});
 
 	it('should render with one device', () => {
-		const devices = [deviceReadfromRaw(DeviceRawProvider.aDevice)];
+		const devices = [deviceReadfromRaw(DeviceRawProvider.get())];
 		const { getByText } = render(DeviceList, { props: { devices } });
 		expect(getByText('device name')).toBeTruthy();
 		expect(getByText('device description')).toBeTruthy();
