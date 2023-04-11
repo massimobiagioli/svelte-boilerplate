@@ -1,3 +1,0 @@
-﻿"id","name","address","description","created_at","is_active","owner"
-"2","First device","10.10.10.1","This is the first device","2023-03-18 20:19:18.307723+00","false","<user-uid>"
-"3","Second device","10.10.10.2","This is the second device","2023-03-18 20:20:20.371118+00","false","<user-uid>"
